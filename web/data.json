@@ -1,0 +1,54 @@
+{
+  "nodes": {
+    "root": {
+      "id": "root",
+      "name": "工程档案",
+      "kind": "directory",
+      "children": [
+        "north",
+        "south",
+        "private"
+      ]
+    },
+    "north": {
+      "id": "north",
+      "name": "工程资料",
+      "kind": "directory",
+      "children": [
+        "f1",
+        "to-root"
+      ]
+    },
+    "south": {
+      "id": "south",
+      "name": "工程资料",
+      "kind": "directory",
+      "children": [
+        "f2"
+      ]
+    },
+    "f1": {
+      "id": "f1",
+      "name": "验收资料",
+      "kind": "file",
+      "file": "FILE-shared"
+    },
+    "f2": {
+      "id": "f2",
+      "name": "验收资料",
+      "kind": "file",
+      "file": "FILE-shared"
+    },
+    "to-root": {
+      "id": "to-root",
+      "name": "工程入口",
+      "kind": "shortcut",
+      "target": "root"
+    },
+    "private": {
+      "id": "private",
+      "name": "受限材料",
+      "kind": "denied"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "phases": [
+    "base",
+    "failed-tree",
+    "moved-tree"
+  ],
+  "moved-tree": "展开北区不再有原子节点，已保存旧路径不可继续沿用",
+  "graph": "快捷引用可形成环，文件FILE-shared具有两条正常目录路径",
+  "limits": "来源不替接入端判断环和预算"
+}
