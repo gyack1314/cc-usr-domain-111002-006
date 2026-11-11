@@ -2,9 +2,13 @@
   "phases": [
     "base",
     "failed-tree",
+    "rebuild-tree",
     "moved-tree"
   ],
+  "failed-tree": "展开南区返回加载失败，节点 data-loaded=error；重试同一分支可成功（切回 base 后），已确认路径不回滚",
+  "rebuild-tree": "每次展开后整体重建 #tree 子树，旧 DOM 元素句柄失效；node-id 与 data-path 保持稳定，页面 window.__portalRebuilds() 记录重建次数，供核对重新定位逻辑",
   "moved-tree": "展开北区不再有原子节点，已保存旧路径不可继续沿用",
-  "graph": "快捷引用可形成环，文件FILE-shared具有两条正常目录路径",
-  "limits": "来源不替接入端判断环和预算"
+  "dom": "折叠节点的子节点不在 DOM；treeitem 暴露 data-node-id/data-path/data-kind/data-loaded；快捷节点额外暴露 data-target；文件节点暴露 data-file-id；无权节点无展开按钮",
+  "graph": "快捷引用可形成环，文件FILE-shared具有两条正常目录路径；north 与 south 是同名兄弟目录，节点 id 不同",
+  "limits": "来源不替接入端判断环和预算；接入端只能使用可见 DOM 与页面内交互，不能借用 /__state、/__control 等运维入口取数"
 }

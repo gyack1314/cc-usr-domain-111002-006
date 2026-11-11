@@ -1,6 +1,7 @@
 # 懒加载档案目录的路径与快捷引用采集本地门户
 
-本项目是可在本地运行的合成业务门户，提供真实浏览器页面、交互状态及样本资料，不包含业务采集端。资料、用户与工作空间都是虚构内容。
+本项目是可在本地运行的合成业务门户，提供真实浏览器页面、交互状态及样本资料。资料、用户与工作空间都是虚构内容。
+`collector/` 是基于 Python + Playwright 的目录采集模块，只通过浏览器可见 DOM 与页面交互采集，不连真实企业文档库，说明见 `collector/README.md`。
 
 ## 环境
 
@@ -22,7 +23,9 @@ python -m portal --port 8090
 
 ```sh
 python -m unittest discover -s tests -v
-python -m compileall -q portal tests
+python -m compileall -q portal collector tests
+# 从有限预算继续采集的端到端示例
+python examples/limited_budget_resume.py
 docker build -t lazy-catalog-portal .
 docker run --rm --network none --shm-size=1g lazy-catalog-portal
 ```
